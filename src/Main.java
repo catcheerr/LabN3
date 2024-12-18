@@ -194,3 +194,35 @@ class RapidPrint{
     }
 }
 
+public class Main {
+    public static Scanner in = new Scanner(System.in);
+    public static PrintStream out = System.out;
+    public static void main(String[] args) throws IOException {
+        //Создаем новый объект скоропечатания
+        RapidPrint child = new RapidPrint();
+
+        // Печатаем 10000 символов на языке "ru"
+        child.typing("ru", 10000);
+
+        //Печатаем 120 минут на языке "ru"
+        child.typingByTime("ru", 120);
+
+        //Получаем текущую скорость на языке "ru"
+        int speed = child.gettingSpeed("ru");
+
+        //Изучаем новые языки
+        child.LearningNewLanguage("eng");
+        child.LearningNewLanguage("kz");
+
+        //Получаем самый активный язык
+        String active = child.mostActive();
+        out.printf("Самый активный язык: %s\n", active);
+
+        //Рассчитываем количество символов для сравнения скорости
+        child.compareSpeed();
+
+        //Выводим информацию
+        child.printInfo();
+    }
+}
+
